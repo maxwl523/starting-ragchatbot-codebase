@@ -76,3 +76,7 @@ On startup, `app.py` automatically ingests all `.pdf`, `.docx`, and `.txt` files
 **ChromaDB** persists to `backend/chroma_db/` (gitignored). To reindex from scratch, call `VectorStore.clear_all_data()` or delete that directory.
 
 **Model:** `claude-sonnet-4-20250514` with `temperature=0`, `max_tokens=800`. One tool use per query (enforced by system prompt instruction, not API-level).
+
+## Frontend cache busting
+
+`frontend/index.html` loads `script.js` and `style.css` with a `?v=N` query string (currently `v=10`). Whenever you modify either of those files, increment the version number in `index.html` so browsers are forced to fetch the updated file rather than serving a cached copy.

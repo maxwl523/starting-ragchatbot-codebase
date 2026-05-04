@@ -1,3 +1,6 @@
+# Claude local overrides
+CLAUDE.local.md
+
 # Environment variables
 .env
 backend/.env
