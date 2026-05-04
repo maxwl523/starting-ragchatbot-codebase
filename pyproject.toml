@@ -26,3 +26,18 @@ testpaths = ["backend/tests"]
 pythonpath = ["backend", "backend/tests"]
 asyncio_mode = "auto"
 addopts = "-v --tb=short"
+
+[dependency-groups]
+dev = [
+    "black>=24.0.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  | backend/chroma_db
+)/
+'''
